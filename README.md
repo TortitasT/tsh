@@ -3,7 +3,9 @@ A shell made in TypeScript and Deno.
 
 ## Instalation
 ```ps1
-irm https://github.com/TortitasT/tsh/install.ps1 | iex
+git clone https://github.com/TortitasT/tsh
+cd tsh
+.\install.ps1
 ```
 
 ## Run
