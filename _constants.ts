@@ -1,5 +1,7 @@
 import { commands } from "./commands/_commands.ts";
 import { colors } from "./_modules.ts";
+import { Filesystem } from "./_filesystem.ts";
+import filter from "./_filters.ts";
 
 export const PSH_USERNAME = Deno.env.get("UserName") || "tsh";
 export const PSH_HOSTNAME = Deno.env.get("ComputerName") || "tsh";
@@ -23,9 +25,11 @@ https://github.com/TortitasT
 Type 'help' to get started.
 `;
 
-export const TSH_PROMPT = `${colors.magenta(PSH_USERNAME)}@${
-  colors.blue(PSH_HOSTNAME)
-} ->`;
+export const TSH_PROMPT = () => {
+  return `${colors.magenta(PSH_USERNAME)}@${colors.blue(PSH_HOSTNAME)} ${
+    filter("route", Filesystem.path)
+  } ->`;
+};
 
 export const TSH_HELP = `
 Included commands:

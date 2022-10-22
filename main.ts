@@ -9,4 +9,8 @@ async function main() {
   }
 }
 
+Deno.addSignalListener("SIGINT", () => {
+  console.log("");
+});
+
 main();

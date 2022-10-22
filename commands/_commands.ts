@@ -11,6 +11,7 @@ import version from "./version.ts";
 import cd from "./cd.ts";
 import pwd from "./pwd.ts";
 import { Filesystem } from "../_filesystem.ts";
+import welcome from "./welcome.ts";
 
 export const commands: Command[] = [
   help,
@@ -20,10 +21,11 @@ export const commands: Command[] = [
   ls,
   cd,
   pwd,
+  welcome,
 ];
 
 export async function handleCommands() {
-  const input = prompt(TSH_PROMPT)?.match(/(?:[^\s"]+|"[^"]*")+/g) || [];
+  const input = prompt(TSH_PROMPT())?.match(/(?:[^\s"]+|"[^"]*")+/g) || [];
 
   let found = false;
 
