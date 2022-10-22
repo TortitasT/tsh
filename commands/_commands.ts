@@ -20,7 +20,7 @@ export const commands: Command[] = [
 ];
 
 export async function handleCommands() {
-  const input = prompt(TSH_PROMPT)?.split(" ") || [];
+  const input = prompt(TSH_PROMPT)?.match(/(?:[^\s"]+|"[^"]*")+/g) || [];
 
   let found = false;
 
