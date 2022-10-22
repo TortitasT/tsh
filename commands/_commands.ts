@@ -9,6 +9,8 @@ import help from "./help.ts";
 import exit from "./exit.ts";
 import version from "./version.ts";
 import cd from "./cd.ts";
+import pwd from "./pwd.ts";
+import { Filesystem } from "../_filesystem.ts";
 
 export const commands: Command[] = [
   help,
@@ -17,6 +19,7 @@ export const commands: Command[] = [
   clear,
   ls,
   cd,
+  pwd,
 ];
 
 export async function handleCommands() {
@@ -36,7 +39,13 @@ export async function handleCommands() {
   if (!found) {
     try {
       await Deno.run({
-        cmd: input,
+        cmd: [
+          "pwsh",
+          "-WorkingDirectory",
+          Filesystem.path,
+          "-Command",
+          input.join(" "),
+        ],
       }).status();
     } catch {
       console.log(colors.red(TSH_DEFAULT_MSG));

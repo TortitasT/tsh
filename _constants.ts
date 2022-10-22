@@ -14,10 +14,11 @@ export const TSH_LOGO = colors.brightMagenta(`
 /_/  /____/_/ /_/   
 `);
 
-export const TSH_VERSION = colors.magenta("0.0.1");
+export const TSH_VERSION = colors.magenta("0.0.2");
 
 export const TSH_WELCOME = `${TSH_LOGO}
 Welcome to TSH ${TSH_VERSION}!
+https://github.com/TortitasT
 
 Type 'help' to get started.
 `;
@@ -27,9 +28,12 @@ export const TSH_PROMPT = `${colors.magenta(PSH_USERNAME)}@${
 } ->`;
 
 export const TSH_HELP = `
-Commands:
+Included commands:
+
 ${
-  commands.map((command) => `${command.name} -> ${command.description}`).join(
+  commands.map((command) =>
+    `${command.name.padEnd(10)} -> ${command.description}`
+  ).join(
     "\n",
   )
 }
