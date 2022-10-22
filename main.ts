@@ -1,11 +1,11 @@
 import { TSH_WELCOME } from "./_constants.ts";
-import { handleCommands } from "./_commands.ts";
+import { handleCommands } from "./commands/_commands.ts";
 
-function main() {
+async function main() {
   console.log(TSH_WELCOME);
 
   while (true) {
-    handleCommands();
+    await handleCommands();
   }
 }
 
