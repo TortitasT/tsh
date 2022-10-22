@@ -1,5 +1,5 @@
-$INSTALL_DIR = "${Home}\.tsh\bin"
-$DOWNLOAD_URL = "https://github.com/TortitasT/tsh/releases/latest/download/tsh-windows-amd64.exe"
+$INSTALL_DIR="${Home}\.tsh\bin"
+$DOWNLOAD_URL="https://github.com/TortitasT/tsh/releases/latest/download/tsh-windows-amd64.exe"
 
 # Create the installation directory if it doesn't exist
 if (!(Test-Path $INSTALL_DIR)) {
@@ -7,7 +7,7 @@ if (!(Test-Path $INSTALL_DIR)) {
 }
 
 # Download the latest release
-Invoke-WebRequest -Uri $DOWNLOAD_URL -OutFile "$INSTALL_DIR\tsh.exe"
+curl.exe -Lo "$INSTALL_DIR\tsh.exe" $DOWNLOAD_URL
 
 # Add the installation directory to the PATH
 $env:Path += ";$INSTALL_DIR"
