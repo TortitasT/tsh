@@ -19,7 +19,8 @@ export const TSH_VERSION = colors.magenta("0.0.1");
 export const TSH_WELCOME = `${TSH_LOGO}
 Welcome to TSH ${TSH_VERSION}!
 
-Type 'help' to get started.`;
+Type 'help' to get started.
+`;
 
 export const TSH_PROMPT = `${colors.magenta(PSH_USERNAME)}@${
   colors.blue(PSH_HOSTNAME)
