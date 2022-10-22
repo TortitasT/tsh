@@ -16,7 +16,7 @@ export const TSH_LOGO = colors.brightMagenta(`
 /_/  /____/_/ /_/   
 `);
 
-export const TSH_VERSION = colors.magenta("0.0.2");
+export const TSH_VERSION = colors.magenta("0.0.4");
 
 export const TSH_WELCOME = `${TSH_LOGO}
 Welcome to TSH ${TSH_VERSION}!
