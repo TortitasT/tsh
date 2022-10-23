@@ -9,6 +9,7 @@ async function main() {
   }
 }
 
+// Used to ignore ctrl+c
 Deno.addSignalListener("SIGINT", () => {
   console.log("");
 });
