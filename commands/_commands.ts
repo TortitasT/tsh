@@ -12,6 +12,7 @@ import cd from "./cd.ts";
 import pwd from "./pwd.ts";
 import { Filesystem } from "../_filesystem.ts";
 import welcome from "./welcome.ts";
+import show from "./show.ts";
 
 export const commands: Command[] = [
   help,
@@ -22,6 +23,7 @@ export const commands: Command[] = [
   cd,
   pwd,
   welcome,
+  show,
 ];
 
 export async function handleCommands() {
